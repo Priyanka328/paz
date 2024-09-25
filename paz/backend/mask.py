@@ -11,7 +11,7 @@ def mask_to_box(mask, mask_value):
     # Returns:
         box: List containing box coordinates.
     """
-    masked = np.where(mask == mask_value)
+    masked = np.where(mask != mask_value)
     mask_x, mask_y = masked[1], masked[0]
     if mask_x.size <= 0 or mask_y.size <= 0:
         box = [0, 0, 0, 0]
